@@ -12,7 +12,7 @@ function App() {
   return (
     <CartProvider>
       <Router>
-        <div className="min-h-screen bg-primary-bg text-primary-text">
+        <div className="min-h-screen bg-primary-bg text-primary-text animate-fade-in">
           <Header />
           <main>
             <Routes>

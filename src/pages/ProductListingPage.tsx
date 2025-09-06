@@ -51,24 +51,26 @@ const ProductListingPage: React.FC = () => {
         <div className="flex lg:space-x-8">
           {/* Sidebar Filters */}
           <div className="hidden lg:block w-80 flex-shrink-0">
-            <FilterSidebar
-              filters={filters}
-              onFilterChange={updateFilter}
-              onClearFilters={clearFilters}
-              isOpen={true}
-              onClose={() => {}}
-            />
+            <div className="animate-slide-in">
+              <FilterSidebar
+                filters={filters}
+                onFilterChange={updateFilter}
+                onClearFilters={clearFilters}
+                isOpen={true}
+                onClose={() => {}}
+              />
+            </div>
           </div>
 
           {/* Main Content */}
           <div className="flex-1">
             {/* Controls Bar */}
-            <div className="flex items-center justify-between mb-6 bg-white p-4 rounded-lg shadow-sm">
+            <div className="flex items-center justify-between mb-6 bg-white p-4 rounded-lg shadow-sm animate-fade-in">
               <div className="flex items-center space-x-4">
                 {/* Mobile Filter Button */}
                 <button
                   onClick={() => setIsFilterOpen(true)}
-                  className="lg:hidden flex items-center space-x-2 border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50"
+                  className="lg:hidden flex items-center space-x-2 border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 transition-all duration-200 hover:scale-105"
                 >
                   <Filter className="h-4 w-4" />
                   <span>Filtros</span>
@@ -78,7 +80,7 @@ const ProductListingPage: React.FC = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-raspberry focus:border-raspberry"
+                  className="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-raspberry focus:border-raspberry transition-all duration-200"
                 >
                   <option value="popular">Más Populares</option>
                   <option value="newest">Novedades</option>
@@ -92,7 +94,7 @@ const ProductListingPage: React.FC = () => {
               <div className="hidden sm:flex items-center space-x-2 border border-gray-300 rounded-lg p-1">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded ${
+                  className={`p-2 rounded transition-all duration-200 hover:scale-110 ${
                     viewMode === 'grid' 
                       ? 'bg-raspberry text-white' 
                       : 'text-secondary-text hover:text-primary-text'
@@ -102,7 +104,7 @@ const ProductListingPage: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2 rounded ${
+                  className={`p-2 rounded transition-all duration-200 hover:scale-110 ${
                     viewMode === 'list' 
                       ? 'bg-raspberry text-white' 
                       : 'text-secondary-text hover:text-primary-text'
@@ -115,11 +117,13 @@ const ProductListingPage: React.FC = () => {
 
             {/* Products Grid */}
             {filteredProducts.length > 0 ? (
-              <ProductGrid products={filteredProducts} />
+              <div className="animate-fade-in">
+                <ProductGrid products={filteredProducts} />
+              </div>
             ) : (
-              <div className="text-center py-16">
+              <div className="text-center py-16 animate-fade-in">
                 <div className="mb-4">
-                  <Filter className="h-16 w-16 text-gray-300 mx-auto" />
+                  <Filter className="h-16 w-16 text-gray-300 mx-auto animate-bounce" />
                 </div>
                 <h3 className="font-serif text-xl font-semibold text-primary-text mb-2">
                   No se encontraron productos
@@ -129,7 +133,7 @@ const ProductListingPage: React.FC = () => {
                 </p>
                 <button
                   onClick={clearFilters}
-                  className="bg-raspberry text-white px-6 py-2 rounded-lg hover:bg-raspberry/90 transition-colors"
+                  className="bg-raspberry text-white px-6 py-2 rounded-lg hover:bg-raspberry/90 transition-all duration-200 hover:scale-105 btn-primary"
                 >
                   Limpiar Filtros
                 </button>
