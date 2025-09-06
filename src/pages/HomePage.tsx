@@ -98,6 +98,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      <BlogSection />
     </div>
   );
 };

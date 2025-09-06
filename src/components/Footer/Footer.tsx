@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
               Enlaces Rápidos
             </h3>
             <ul className="space-y-2">
-              {['Productos', 'Sobre Nosotros', 'Contacto', 'Mi Cuenta'].map((link) => (
+              {['Productos', 'Sobre Nosotros', 'Blog', 'Contacto', 'Mi Cuenta'].map((link) => (
                 <li key={link}>
                   <Link to="#" className="text-secondary-text hover:text-raspberry transition-colors text-sm">
                     {link}
@@ -78,15 +78,15 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-raspberry" />
-                <span className="text-secondary-text text-sm">+52</span>
+                <span className="text-secondary-text text-sm">+57 (1) 234-5678</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-raspberry" />
-                <span className="text-secondary-text text-sm">Lukanaturalelegance@gmail.com</span>
+                <span className="text-secondary-text text-sm">hola@lukanatural.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-raspberry" />
-                <span className="text-secondary-text text-sm">Merida, Yucatan</span>
+                <span className="text-secondary-text text-sm">Bogotá, Colombia</span>
               </div>
             </div>
           </div>
@@ -98,8 +98,8 @@ const Footer: React.FC = () => {
             © 2025 Luka Natural Elegance. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
-            <span className="text-secondary-text text-sm"></span>
-            <span className="text-secondary-text text-sm"></span>
+            <span className="text-secondary-text text-sm">Pagos seguros</span>
+            <span className="text-secondary-text text-sm">Envío gratis desde $150.000</span>
           </div>
         </div>
       </div>
