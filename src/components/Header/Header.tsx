@@ -51,6 +51,12 @@ const Header: React.FC = () => {
                   {category.name}
                 </Link>
               ))}
+              <Link
+                to="/blog"
+                className="text-primary-text hover:text-raspberry transition-colors duration-200 font-medium"
+              >
+                Blog
+              </Link>
             </nav>
 
             {/* Right Side Icons */}
@@ -102,6 +108,13 @@ const Header: React.FC = () => {
                   {category.name}
                 </Link>
               ))}
+              <Link
+                to="/blog"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-primary-text hover:text-raspberry transition-colors duration-200 font-medium"
+              >
+                Blog
+              </Link>
             </nav>
           </div>
         )}
