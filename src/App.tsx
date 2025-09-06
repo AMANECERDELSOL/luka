@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import ProductListingPage from './pages/ProductListingPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import CartProvider from './context/CartContext';
+import './App.css';
 
 function App() {
   return (
