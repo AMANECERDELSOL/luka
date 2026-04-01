@@ -54,7 +54,7 @@ export interface OrderItem {
     price: number;
 }
 
-export const API_URL = 'http://localhost:3001';
+export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 export function getImageUrl(path: string): string {
     if (!path || path === '[]') return '';
